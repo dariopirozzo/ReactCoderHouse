@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { llamar } from "../../helpers/pedirDatos";
-import { mostrarArray } from "../../components/Items/mostrarArray";
+import { mostrarArray } from "./mostrarArray";
 
 export const Items = ({ greeting }) => {
   const [data, setData] = useState([]);
