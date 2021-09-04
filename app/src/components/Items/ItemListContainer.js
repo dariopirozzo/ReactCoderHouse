@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { llamar } from "../../helpers/pedirDatos";
-import { mostrarArray } from "./mostrarArray";
+import { pedirDatos } from "../../helpers/pedirDatos";
+import { itemList } from "./itemList";
+
 
 export const Items = ({ greeting }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    llamar()
+    pedirDatos()
       .then((res) => setData(res))
       .finally(() => {
         setLoading(false);
       });
   }, []);
   
-  return <>{loading ? <p>loading..</p> 
-
-    :   <mostrarArray prod={data}/>
+  return <>
+  {loading ? <p>loading..</p> 
+    :   <itemList productos={data}/>
   }</>;
 };
