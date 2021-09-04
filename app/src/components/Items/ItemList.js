@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { llamar } from "../../helpers/pedirDatos";
+import { mostrarArray } from "../../components/Items/mostrarArray";
 
-export const Items = ({greeting}) => {
+export const Items = ({ greeting }) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    llamar()
+      .then((res) => setData(res))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+  
+  return <>{loading ? <p>loading..</p> 
 
-return (
-    <p>
-        {greeting}
-    </p>
-)
-
-}
+    :   <mostrarArray prod={data}/>
+  }</>;
+};
