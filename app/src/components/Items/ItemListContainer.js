@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { pedirDatos } from "../../helpers/pedirDatos";
-import { itemList } from "./itemList";
+
+import {ItemList} from "../Items/itemList";
 
 
 export const Items = ({ greeting }) => {
@@ -17,6 +18,7 @@ export const Items = ({ greeting }) => {
   
   return <>
   {loading ? <p>loading..</p> 
-    :   <itemList productos={data}/>
+
+    : <ItemList data={data}/>
   }</>;
 };
