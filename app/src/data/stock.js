@@ -4,20 +4,23 @@ export const stock = [
       category:"calzado",
       nombre: "zapatillas",
       precio: 100,
-      img : "https://picsum.photos/seed/picsum/200/300"
+      img : "https://picsum.photos/seed/picsum/200/300",
+      stock: "2"
     },
     {
       id: 2,
       category:"remeras",
       nombre: "remera",
       precio: 100,
-      img : "https://picsum.photos/seed/picsum/200/300"
+      img : "https://picsum.photos/seed/picsum/200/300",
+      stock: "6"
     },
     {
       id: 3,
       category:"abrigos",
       nombre: "buzo",
       precio: 100,
-      img : "https://picsum.photos/seed/picsum/200/300"
+      img : "https://picsum.photos/seed/picsum/200/300",
+      stock: "5"
     },
   ];

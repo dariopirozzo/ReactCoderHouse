@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { pedirDatos } from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../Items/itemList";
+import { unContext } from "../../context/unContext";
 
 export const Items = () => {
+
   const { catId } = useParams();
 
   const [data, setData] = useState([]);
