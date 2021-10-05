@@ -2,14 +2,14 @@ import React, { useEffect, useState, useContext } from "react";
 import { pedirDatos } from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../Items/itemList";
-import { unContext } from "../../context/unContext";
+import { UIContext } from "../../context/UIContext";
 
 export const Items = () => {
 
+  const {loading, setLoading} = useContext(UIContext);
   const { catId } = useParams();
 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);

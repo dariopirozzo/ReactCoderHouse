@@ -5,7 +5,7 @@ import { Counter } from "../../helpers/counter";
 
 export const ItemDetail = ({id, category, nombre, precio, img, stock}) =>{
 
-const {agregarAlCarrito}= useContext(unContext)
+const {agregarAlCarrito, isInCart}= useContext(unContext)
 
 const [cantidad, setCantidad]= useState(1)
 
@@ -21,7 +21,12 @@ agregarAlCarrito({
             <h2>    detalle del producto </h2>
             <h2>    {nombre}</h2>
             <h2> precio : {precio}</h2>
-           <Counter max={stock} cantidad={cantidad} setCantidad={setCantidad} agregar={handleAdd}/>
+           <Counter 
+           max={stock} 
+           cantidad={cantidad} 
+           setCantidad={setCantidad} 
+           agregar={handleAdd} 
+           agregado={isInCart(id)}/>
             <img src={img}></img>
         </div>
     )

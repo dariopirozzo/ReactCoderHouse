@@ -4,33 +4,17 @@ import "./estilos/estilos.css";
 import { ItemDetailContainer } from "./components/Items/ItemDetailContainer";
 import {BrowserRouter, Switch, Route}  from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
-import { unContext } from "./context/unContext";
-import { useEffect, useState, useContext } from "react";
+import { CartProvider } from "./context/unContext";
 import {CartScreen} from "./components/CartScreen"
+import { UIContextProvider } from "./context/UIContext";
 
 function App() {
 
- const [carrito, setCarrito] = useState([])
-const agregarAlCarrito=(prod)=> {
-  setCarrito([
-    ...carrito,
-    prod
-  ])
-}
-const eliminarDelCarrito = (id) => {
-
-setCarrito(carrito.filter(prod=> prod.id !==id))
-}
-const cantidadCarrito = ()=>{
-  return carrito.reduce((acc, prod)=> acc + prod.cantidad,0)
-}
-
-const vaciarCarrito = () => {
-  setCarrito([])
-}
 
   return (
-    <unContext.Provider value={{carrito, agregarAlCarrito,eliminarDelCarrito,cantidadCarrito,vaciarCarrito}}>  
+       <UIContextProvider>  
+
+        <CartProvider> 
 
   <BrowserRouter> 
   <NavBar/>
@@ -59,8 +43,10 @@ const vaciarCarrito = () => {
   </Switch>
   
   </BrowserRouter>
+   </CartProvider>
 
-    </unContext.Provider>
+       </UIContextProvider>
+    
   );
 }
 
