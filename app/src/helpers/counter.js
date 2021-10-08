@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export const Counter = ({max, cantidad, setCantidad,agregar,agregado}) =>{
@@ -26,12 +26,12 @@ return (
                ?  <Link to="/carrito" className="btn btn.success">terminar compra</Link>
                : 
 
-               <div>   
+               <div className="flex">   
 
-                   <button onClick={handleSumar}>+</button>
+                   <button onClick={handleSumar} className="btn btn-success espacio">+</button>
                    <p>{cantidad}</p>
-                   <button onClick={handleRestar}>-</button>
-               <button className="flex" onClick={agregar}>agregar al carrito</button>
+                   <button onClick={handleRestar} className="btn btn-success espacio">-</button>
+               <button className="flex" onClick={agregar} className="btn btn-success espacio">agregar al carrito</button>
                </div>
                
             }

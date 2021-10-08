@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { CartProvider } from "./context/unContext";
 import {CartScreen} from "./components/CartScreen"
 import { UIContextProvider } from "./context/UIContext";
+import { Checkout } from "./components/Checkout";
 
 function App() {
 
@@ -28,18 +29,16 @@ function App() {
     <Route path="/detail/:itemId"> 
     <ItemDetailContainer/>
     </Route>
-    <Route exact path="/nosotros"> 
-<h1>nosotros</h1>
 
-    </Route>
     <Route exact path="/carrito"> 
     <CartScreen/>
 
     </Route>
-    <Route path="*"> 
-<h1> 404</h1>
+   
 
-    </Route>
+    <Route exact path="/checkout"> 
+<Checkout/>
+ </Route>
   </Switch>
   
   </BrowserRouter>

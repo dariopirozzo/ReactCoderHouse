@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import { pedirDatos } from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../Items/itemList";
 import { UIContext } from "../../context/UIContext";

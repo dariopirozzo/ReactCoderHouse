@@ -29,6 +29,7 @@ export const CartProvider = ({children})=>{
             return carrito.some(el => el.id == id)
     }
 
+    
     return (
 <unContext.Provider value={{carrito, agregarAlCarrito,eliminarDelCarrito,cantidadCarrito,vaciarCarrito, isInCart}}>    
 {children}

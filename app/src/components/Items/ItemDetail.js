@@ -17,17 +17,22 @@ agregarAlCarrito({
 }
 
     return (
+        <>
+        <h2 className="espacio">    detalle del producto </h2>
+        <div className="container flex">   
         <div>   
-            <h2>    detalle del producto </h2>
             <h2>    {nombre}</h2>
             <h2> precio : {precio}</h2>
-           <Counter 
+
+        </div>
+           <Counter className=""
            max={stock} 
            cantidad={cantidad} 
            setCantidad={setCantidad} 
            agregar={handleAdd} 
            agregado={isInCart(id)}/>
-            <img src={img}></img>
+            <img src={img} ></img>
         </div>
+           </>
     )
 }

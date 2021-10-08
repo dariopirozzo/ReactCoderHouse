@@ -1,6 +1,5 @@
 import React, { useEffect, useState,useContext } from "react";
 import {useParams} from 'react-router-dom'
-import { pedirDatos } from "../../helpers/pedirDatos";
 import { ItemDetail } from "./ItemDetail";
 import { UIContext } from "../../context/UIContext";
 import { getFirestore } from "../../fireBase/config";

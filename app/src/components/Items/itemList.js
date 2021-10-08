@@ -7,14 +7,14 @@ export const ItemList = ({ data }) => {
       <div className="row"> 
       <h2>productos</h2>
       <hr />
-      { <div className="">
+      { <div className="row">
         {data.map((stock) => (
-          <li key={stock.id}>
+          <div key={stock.id} className="card col-4">
             <img src={stock.img} alt={stock.nombre} />
             <h3>{stock.nombre}</h3>
             <p>{stock.precio}</p>
-           <Link to={`/detail/${stock.id}`}>vermas</Link>
-          </li>
+           <Link to={`/detail/${stock.id}`} ><button className="btn btn-success">ver mas !</button></Link>
+          </div>
         ))}
       </div> }
       </div>

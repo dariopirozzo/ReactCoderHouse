@@ -5,16 +5,18 @@ import { CartWidget } from "../cartWidget/cartWidget";
 export const NavBar = () => {
 
   return (
-    <header className="logo">
-      <nav>
-       <Link to={"/"}>inicio</Link>
-       <Link to={"/nosotros"}>nosotros</Link>
-       <Link to={"/carrito"}>Carrito</Link>
-       <Link to={"/category/calzado"}>calzado</Link>
-       <Link to={"/category/remeras"}>remeras</Link>
-       <Link to={"/category/abrigos"}>abrigos</Link>
+
+    <div className="container"> 
+    <header className=" logo">
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <h1 className="espacio">logo</h1>
+       <Link to={"/"} className="btn btn-primary espacio">inicio</Link>
+       <Link to={"/category/calzado"} className="btn btn-primary espacio">calzado</Link>
+       <Link to={"/category/abrigos"} className="btn btn-primary espacio">abrigos</Link>
       </nav>
      <CartWidget/>
     </header>
+
+    </div>
   );
 };
